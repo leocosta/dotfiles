@@ -1,0 +1,46 @@
+[user]
+	name = leocosta
+	email = leoccosta@outlook.com
+[pager]
+	branch = false
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[commit]
+	gpgsign = true
+[tag]
+	forceSignAnnotated = true
+[init]
+	defaultBranch = main
+[core]
+	editor = code --wait
+	autocrlf = false
+	ignoreCase = false
+	symlinks = true
+[alias]
+  # List all available aliases
+  alias = !git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
+  # Delete all local branches but main and the current one, only if they are fully merged with main.
+  br-delete-useless = !git branch | grep -v "main" | grep -v ^* | xargs -r git branch -d
+  # Checkout
+  co = checkout
+
+  undo = reset --soft HEAD^
+[push]
+	autoSetupRemote = true
+[pull]
+	rebase = true
+[rebase]
+	autoStash = true
+[merge]
+	tool = vscode
+[mergetool "vscode"]
+	cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
+[diff]
+	tool = vscode
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
+[http]
+	postBuffer = 524288000
