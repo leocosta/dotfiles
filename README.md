@@ -10,12 +10,7 @@ This repository contains useful dotfiles for VSCode, GitHub Actions, and other h
 ## Configuration
 - VSCode Settings: `.vscode/settings.json` contains custom VSCode configurations
 - Git Configuration: `.gitconfig` for Git user settings
-- Continue Config: `.continue/config.yaml` for persistent session management
-
-## Usage
-- **VSCode**: Import the `.vscode/settings.json` file through the settings UI
-- **Git**: The `.gitconfig` file sets up default Git configurations
-- **Session Management**: Use `../../.continue/config.yaml` to manage persistent terminal sessions
+- Continue Config: `.continue/config.yaml` for Continue VSCode Extension settings
 
 ## Contribution
 - Contributions are welcome! Please submit pull requests for improvements or new features
